@@ -6,7 +6,7 @@ Requirements
 PHP 7.0 or higher with PDO drivers enabled for database systems:
 MySQL 5.6 or higher in MySQL
 
-Installation
+**Installation**
 
 For local development you may create virtual host in local system
 
@@ -18,7 +18,7 @@ Don't forget to modify the configuration at the bottom of the file.
 Alternatively you can user POSTMAN Rest Api tool to test the PHP API
 
 
-Configuration:
+**Configuration:**
 
 Edit the database connection details which mentioned inside config folder "database.php":
 
@@ -51,8 +51,8 @@ Response
 }
 
 
-Read
-Table Name : weather
+**Read
+**Table Name : weather
 
 To read last record from this table the request can be written in URL format as:
 
@@ -75,3 +75,8 @@ It will return the 7 days records average
     },
     "message": "success"
 }
+
+**For Crone Set Up
+**We can setup crone file for inserting data in every 3 min**
+
+http://yourvirtualhostname/api/weathe.php
