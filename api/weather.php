@@ -27,7 +27,7 @@ try {
     if (!empty($data) && isset($data->temp) && $weather->getWeather($apiUrl, $apiKey, $weather->city)) {
         $weather->value = $data->temp;
         $createWeather = new Create($db);
-        $data = $weather->createWeather($weather->city, $weather->value);
+        $data = $createWeather->createWeather($weather->city, $weather->value);
         http_response_code(200);
         echo json_encode(array("message" => "Created."));
     } else {
