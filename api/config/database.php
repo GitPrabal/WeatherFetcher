@@ -1,11 +1,13 @@
 <?php
+
+
 class Database{
  
     // specify your own database credentials
-    private $host = "localhost";
-    private $db_name = "weather";
-    private $username = "root";
-    private $password = "";
+    private $host     = hostname;
+    private $db_name  = db;
+    private $username = username;
+    private $password = password;
     public $conn;
  
     // get the database connection

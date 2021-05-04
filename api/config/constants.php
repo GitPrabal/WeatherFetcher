@@ -10,5 +10,11 @@ define('city','London');
 define('last_days',7);
 
 
+define('hostname','localhost');
+define('db','weather');
+define('username','root');
+define('password','');
+
+
 
 ?>

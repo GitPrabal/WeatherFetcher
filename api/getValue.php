@@ -3,7 +3,7 @@
 require 'config/database.php';
 require 'config/constants.php';
 //require 'config/headers.php';
-require 'objects/Weather.php';
+require 'models/Weather.php';
 // get database connection
 $database = new Database();
 $db = $database->getConnection();

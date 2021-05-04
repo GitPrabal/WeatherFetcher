@@ -1,8 +1,8 @@
 <?php
 require 'config/database.php';
 require 'config/constants.php';
-require 'objects/Task.php';
-require 'objects/Create.php';
+require 'models/Task.php';
+require 'models/Create.php';
 
 // get database connection
 $database = new Database();

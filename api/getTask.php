@@ -3,7 +3,7 @@
 require 'config/database.php';
 require 'config/constants.php';
 require 'config/headers.php';
-require 'objects/Task.php';
+require 'models/Task.php';
 // get database connection
 $database = new Database();
 $db = $database->getConnection();

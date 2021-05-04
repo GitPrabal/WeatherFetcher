@@ -5,10 +5,8 @@ class Create {
     private $conn;
     private $table_name = "weather";
     private $task_table = 'task';
-    // object properties
-    public $city;
-    public $value;
-    // constructor
+    
+    
     public function __construct($db) {
         $this->conn = $db;
     }
