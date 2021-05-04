@@ -2,7 +2,7 @@
 
 require 'config/database.php';
 require 'config/constants.php';
-require 'config/headers.php';
+//require 'config/headers.php';
 require 'objects/Weather.php';
 // get database connection
 $database = new Database();
@@ -21,7 +21,7 @@ try {
 	$data = $weather->getLastWeather();
 	if (!empty($data)) {
 	    http_response_code(200);
-	    echo json_encode(array("results" => $data, "message" => "success"));
+	    echo json_encode(array("results" => $data, "message" => "success",));
 	} else {
 	    $data = array();
 	    http_response_code(404);
@@ -29,7 +29,8 @@ try {
 	}
 
   }catch (Exception $e) {
-	
+
+  		echo json_encode(array("results" => $data, "message" => $e));
 }
 
 ?>

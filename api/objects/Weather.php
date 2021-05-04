@@ -4,30 +4,12 @@ class Weather {
     // database connection and table name
     private $conn;
     private $table_name = "weather";
-    // object properties
-    public $city;
-    public $value;
-    // constructor
+
     public function __construct($db) {
         $this->conn = $db;
     }
-    function createWeather($city = null, $value = null) {
-        // insert query
-        $query = "INSERT INTO " . $this->table_name . " SET city = :city, value = :value";
-        // prepare the query
-        $stmt = $this->conn->prepare($query);
-        // sanitize
-        $city = htmlspecialchars(strip_tags($city));
-        $value = htmlspecialchars(strip_tags($value));
-        // bind the values
-        $stmt->bindParam(':city', $city);
-        $stmt->bindParam(':value', $value);
-        // execute the query, also check if query was successful
-        if ($stmt->execute()) {
-            return true;
-        }
-        return false;
-    }
+
+    
     public function getWeather($apiUrl = null, $apiKey = null, $city = null) {
         try {
             $curl = curl_init();
@@ -49,20 +31,19 @@ class Weather {
         }
     }
     public function getLastWeather() {
-        $query = "SELECT value FROM " . $this->table_name . " order by id DESC LIMIT 1";
+        $query = "SELECT city,value,added_date FROM " . $this->table_name . " order by id DESC LIMIT 1";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC); // get the mysqli result
-        $value = $row["value"];
-        return $value;
+        return $row = $stmt->fetch(PDO::FETCH_ASSOC); // get the mysqli result
     }
-    public function getAvg() {
-        $query = "SELECT value FROM " . $this->table_name . " order by id DESC LIMIT 1";
+
+    public function getAvg($limit = null) {
+
+    	$query = "SELECT avg(value) as average FROM (SELECT value FROM ".$this->table_name." ORDER BY id DESC LIMIT $limit) t1";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
-        $row = $stmt->fetch(); // get the mysqli result
-        $value = $row["0"];
-        return $value;
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $row;
     }
 }
 ?>
