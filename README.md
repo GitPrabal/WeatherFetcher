@@ -36,7 +36,7 @@ If you want to create a record the request can be written in URL format as:
 
 POST http://your-virtual-hostname/api/weather.php
 
-You have to send a body containing city name ( its optinal ):
+You have to send a body containing city name ( its optional ):
 
 {
     "city": "London"
@@ -56,12 +56,14 @@ Response
 
 To read last record from this table the request can be written in URL format as:
 
-GET http://your-virtual-hostname/api/getValue.php
+GET http://your-virtual-hostname/api/getLastWeather.php
 
 On read operations you may apply average.
 you can also check average of last 7 records 
 
 You can also check any number of records for that you need to send a body containing last_days as key
+
+GET http://your-virtual-hostname/api/getAvg.php 
 
 {
    "last_days" : "7"
