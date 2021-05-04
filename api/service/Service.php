@@ -4,8 +4,6 @@ class Service {
     // database connection and table name
     private $conn;
     private $table_name = "weather";
-    private $apiUrl = apiUrl;
-    private $apiKey = apiKey;
 
     public function __construct($db) {
         $this->conn = $db;
