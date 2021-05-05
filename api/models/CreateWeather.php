@@ -1,10 +1,12 @@
 <?php
 
-class Create {
+namespace Api\models;
+
+
+class CreateWeather {
     // database connection and table name
     private $conn;
     private $table_name = "weather";
-    private $task_table = 'task';
     
     
     public function __construct($db) {

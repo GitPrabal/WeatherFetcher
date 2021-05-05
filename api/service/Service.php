@@ -1,4 +1,7 @@
 <?php
+
+namespace Api\service;
+
 // 'user' object
 class Service {
     // database connection and table name

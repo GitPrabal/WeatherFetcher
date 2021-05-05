@@ -1,9 +1,12 @@
 <?php
 
-require 'config/database.php';
-require 'config/constants.php';
-//require 'config/headers.php';
-require 'models/Weather.php';
+namespace Api;
+
+require '../bootstrap.php';
+
+use Api\Config\Database;
+use Api\models\Weather;
+
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
