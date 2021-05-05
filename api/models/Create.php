@@ -1,5 +1,5 @@
 <?php
-// 'user' object
+
 class Create {
     // database connection and table name
     private $conn;
