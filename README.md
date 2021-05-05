@@ -59,6 +59,7 @@ To read last record from this table the request can be written in URL format as:
 GET http://your-virtual-hostname/api/getLastWeather.php
 
 On read operations you may apply average.
+
 you can also check average of last 7 records 
 
 You can also check any number of records for that you need to send a parameter which name will be limit
@@ -67,7 +68,7 @@ you can pass any number to the limit
 GET http://your-virtual-hostname/api/getAvg.php?limit=7 
 
 
-It will return the 7 days records average
+It will return the last 7 days records average
 
 {
     "results": {
