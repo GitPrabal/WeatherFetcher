@@ -61,13 +61,11 @@ GET http://your-virtual-hostname/api/getLastWeather.php
 On read operations you may apply average.
 you can also check average of last 7 records 
 
-You can also check any number of records for that you need to send a body containing last_days as key
+You can also check any number of records for that you need to send a parameter which name will be limit
+you can pass any number to the limit
 
-GET http://your-virtual-hostname/api/getAvg.php 
+GET http://your-virtual-hostname/api/getAvg.php?limit=7 
 
-{
-   "last_days" : "7"
-}
 
 It will return the 7 days records average
 
@@ -83,47 +81,5 @@ It will return the 7 days records average
 
 http://yourvirtualhostname/api/weather.php
 
-**Database Configuration For Task Scheduler**
-
-Run
-http://yourvirtualhostname/api/task.php
-It will automatically create task table in database and insert some data into table
-
-**For Run Script**
-POST http://yourvirtualhostname/api/task.php
-
-You need to pass two parameters for creating task
-
-{
-   "job" : "job_type",
-   "status" : "job_status"
-}
-
-
-**Database Configuration For Task Scheduler**
-
-Once table has been created we can easily retrive pending task from task table
-
-http://yourvirtualhostname/api/getTask.php
-
-Response
-
-{
-    "results": [
-        {
-            "id": "1",
-            "job": "job_type"
-        },
-        {
-            "id": "2",
-            "job": "job_type"
-        },
-        {
-            "id": "3",
-            "job": "job_type"
-        }
-    ],
-    "message": "success"
-}
 
 
